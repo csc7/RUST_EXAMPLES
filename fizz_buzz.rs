@@ -5,50 +5,97 @@ use std::io;
 
 fn main() {
 
-    
-    // Welcome message showing maximum integer value for i32 type
-    println!("\n");
-    println!("===================");
-    println!("FIZZ BUZZ MULTIPLES");
-    println!("===================\n");
-    println!("Enter an integer number lower than 2,147,483,647:");
+    let mut keep_running = true;
 
-    // Credit for Data Input in Rust, with error handling:
-    // https://stackoverflow.com/questions/31235359/reading-an-integer-from-input-and-assigning-it-to-a-variable
-    // Code modified/edited (all Ok(_) and Err(_) messages),
-    // last println! deleted
-    let mut number = String::new();
-    match io::stdin().read_line(&mut number) {
-        Ok(_) => println!("\nData entered."),
-        Err(_) => {
-            println!("\nFailed to read input.");
-            return;
-        },
-    };
-    let number: u32 = match number.trim().parse() {
-        Ok(n) => {
-            println!("\nYour number is {}\n", number);
-            n
-        },
-        Err(_) => {
-            println!("\nNot a number.");
-            return;
-        },
-    };
-    // End Data Input in Rust
+    while keep_running {
+      
+        // Welcome message showing maximum integer value for i32 type
+        println!("\n");
+        println!("===================");
+        println!("FIZZ BUZZ MULTIPLES");
+        println!("===================\n");
+        println!("Enter an integer number from 1 to N,");
+        println!("(where N is limited by your system");
+        println!("architecutre):");
 
-    // Call Main Function of the Program
-    fuzz_bizz_multiples (number);
+        // Credit for Data Input in Rust, with error handling:
+        // https://stackoverflow.com/questions/31235359/reading-an-integer-from-input-and-assigning-it-to-a-variable
+        // Code modified/edited (all Ok(_) and Err(_) messages, bott
+        // Err() "return" changed by "continue"),
+        // last println! deleted
+        // Accessed on December 29th, 2021.
+        let mut number = String::new();
+        match io::stdin().read_line(&mut number) {
+            Ok(_) => println!("\nData entered.\n"),
+            Err(_) => {
+                println!("\nFailed to read input.\n");
+                continue;
+            },
+        };
+        let number: isize = match number.trim().parse() {
+            Ok(n) => {
+                println!("\nYour number is {}\n", number);
+                n
+            },
+            Err(_) => {
+                println!("\nNot a number.\n");
+                continue;
+            },
+        };
+        // End Data Input in Rust
 
-    // End message
-    println!("\n");
-    println!("Input number reached ({})", number);
-    println!("=========================");
+        // Using "isize" type to account for negative integers (and so give
+        // the user a message to enter values from 1 to N, as requested) and
+        // to limit the maximum integer value to the one given by the system
+        // running the program (for signed integer).
+
+        if number <= 0 {
+            println!("Please enter a positive number smaller than");
+            println!("2,147,483,647 (program designed for positive integers");
+            println!("from 1 to 2,147,483,647.");
+            println!("\n");
+            continue;
+        }
+
+        // Call Main Function of the Program
+        fuzz_bizz_multiples (number);        
+
+        // End message
+        println!("\n");
+        println!("Input number reached ({})", number);
+        println!("=========================");
+        println!("\n");
+
+        // Ask to continue of leave
+        keep_running = stop_or_continue_program();
+    }
+
+    println!("==============");
+    println!("Program Closed");
+    println!("==============");
     println!("\n");
 }
 
+fn stop_or_continue_program() -> bool {
+    println!("Keep running?");
+    println!("Enter 'exit' to leave or anything else to continue");
+    let mut answ = String::new();
+    io::stdin().read_line(&mut answ).expect("Not a valid string");
+    // The solution using ".trim()" (versus not using it) was found here:
+    // http://danielnill.com/rust_tip_compairing_strings
+    // © 2018 Daniel Nill.
+    // Accessed on December 29th, 2021, at 18:23.
+    if answ.trim() == "exit" {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
 
-fn fuzz_bizz_multiples(num: u32) {
+
+
+fn fuzz_bizz_multiples(num: isize) {
     // All possible answers and answer to print
     let all_answers = ["Fizz", "Buzz", "FizzBuzz", ""];
     let mut answer = all_answers[3];
