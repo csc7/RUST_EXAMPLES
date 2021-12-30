@@ -40,7 +40,7 @@ To get started with a Rust CLI project on Gitpod, add a [`.gitpod.yml`](./.gitpo
 
 ## Added Section - Own Project
 
-This is a repository where I include basic examples in Rust; currently including the typical/known fizz-buzz and fibonacci (with recursion and memoization).
+This is a repository where I include basic examples in Rust; currently including the typical/known fizz-buzz and fibonacci (with recursion and memoization) exercises.
 
 ### Credits for fizz_buzz.rs:
 
