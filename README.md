@@ -7,6 +7,15 @@
   - [Get Started With Your Own Project](#get-started-with-your-own-project)
     - [A new project](#a-new-project)
     - [An existing project](#an-existing-project)
+  - [(Added Section)](#added-section)
+  - [Own Project](#own-project)
+    - [Credits for fizz_buzz.rs:](#credits-for-fizz_buzzrs)
+      - [Using ".trim()" when comparing strings:](#using-trim-when-comparing-strings)
+      - [Entering data with error handling:](#entering-data-with-error-handling)
+    - [Credits for fibonacci.rs](#credits-for-fibonaccirs)
+      - ["memoize" and "fibonacci" functions:](#memoize-and-fibonacci-functions)
+      - [Using ".trim()" when comparing strings:](#using-trim-when-comparing-strings-1)
+      - [Entering data with error handling:](#entering-data-with-error-handling-1)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
