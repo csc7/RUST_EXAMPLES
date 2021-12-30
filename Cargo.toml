@@ -16,6 +16,7 @@ members = [
     "utils",
     "cli",
     "core",
+    "fib",
 ]
 
 [dependencies]
@@ -27,6 +28,9 @@ better-panic = "0.2.0"
 log = "0.4.11"
 slog-scope = "4.3.0"
 slog-stdlog = "4.1.0"
+fib = "0.1.0"
+fibo_rec_memoiz = "0.1.0"
+fibo_rec_memoiz_lib = "0.1.0"
 
 [dev-dependencies]
 assert_cmd = "1.0.1"

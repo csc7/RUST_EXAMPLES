@@ -1,3 +1,7 @@
+// This program returns the Nth fibonacci number with recursion
+// and memoization
+
+
 // Credits for "memoize" and "fibonacci" functions:
 // Andrew Pritchard
 // https://medium.com/swlh/on-memoization-291fd1dd924
