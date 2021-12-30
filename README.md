@@ -39,9 +39,7 @@ Click the above "Open in Gitpod" button to start a new workspace. Once you're re
 
 To get started with a Rust CLI project on Gitpod, add a [`.gitpod.yml`](./.gitpod.yml) file which contains the configuration to improve the developer experience on Gitpod. To learn more, please see the [Getting Started](https://www.gitpod.io/docs/getting-started) documentation.
 
-## (Added Section)
-
-## Own Project
+## Added Section - Own Project
 
 This is a repository where I include basic examples in Rust; currently including the typical/known fizz-buzz and fibonacci (with recursion and memoization).
 
@@ -59,7 +57,7 @@ Err() "return" changed by "continue"),
 last println! deleted
 Accessed on December 29th, 2021.
 
-### Credits for fibonacci.rs
+### Credits for fibonacci.rs:
 
 #### "memoize" and "fibonacci" functions:
 Andrew Pritchard
