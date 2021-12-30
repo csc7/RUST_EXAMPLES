@@ -77,7 +77,7 @@ fn main() {
 
         // Credit for Data Input in Rust, with error handling:
         // https://stackoverflow.com/questions/31235359/reading-an-integer-from-input-and-assigning-it-to-a-variable
-        // Code modified/edited (all Ok(_) and Err(_) messages, bott
+        // Code modified/edited (all Ok(_) and Err(_) messages, both
         // Err() "return" changed by "continue"),
         // last println! deleted
         // Accessed on December 29th, 2021.
